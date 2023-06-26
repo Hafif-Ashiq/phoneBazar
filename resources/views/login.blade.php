@@ -211,7 +211,7 @@
         </div>
     </div>
     {{-- <div class="text-[120px]">{{$text}}</div> --}}
-    <a href="/myorders">Myorders</a>
+    {{-- <a href="/myorders">Myorders</a> --}}
 </body>
 
 </html>

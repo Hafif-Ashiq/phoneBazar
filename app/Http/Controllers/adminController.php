@@ -48,19 +48,13 @@ class adminController extends Controller
             'image' => 'required|image',
         ]);
 
-        // Retrieve the uploaded image file
+   
         $image = $req->file('gallery');
 
-        // Generate a unique filename for the image
-        // $base64Image = base64_encode(File::get($image));
-
-        // // Save the image filename to the database
-       
-        // $product->gallery = $base64Image;
-        
+    
         $filename = uniqid() . '.' . $image->getClientOriginalExtension();
 
-        // Store the image file in the storage directory
+        
         Storage::disk('public')->putFileAs('images', $image, $filename);
         $product->gallery = $filename;
         $product->save();

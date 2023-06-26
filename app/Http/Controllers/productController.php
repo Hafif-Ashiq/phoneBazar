@@ -81,16 +81,11 @@ class productController extends Controller
         $userId = Session::get('user')['id'];
         $price = Product::where("id", $id)->get('price')->first();
 
-        // return $total;
-
-        // if ($total == 0) {
-        //     return redirect('home');
-        // }
 
         return view('buyNow', ['price' => $price]);
     }
 
-    function cartItems()
+    static function cartItems()
     {
         if (!Session::has('user'))
             return redirect('/login');
